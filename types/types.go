@@ -10,4 +10,5 @@ type Result struct {
 	Port    int
 	Open    bool
 	Service string
+	Banner  string
 }

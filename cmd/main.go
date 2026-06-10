@@ -15,9 +15,10 @@ func main() {
 	go func() {
 		for res := range pool.Results {
 			fmt.Printf(
-				"%d/tcp open %s\n",
+				"%d/tcp open %s %q\n",
 				res.Port,
 				res.Service,
+				res.Banner,
 			)
 		}
 	}()
