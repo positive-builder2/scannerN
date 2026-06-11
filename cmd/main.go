@@ -12,6 +12,9 @@ func main() {
 
 	pool := scanner.NewPool(100)
 
+	// resp := scanner.ProbeHTTP("localhost", 8081)
+	// fmt.Println(resp)
+
 	go func() {
 		for res := range pool.Results {
 			fmt.Printf(
@@ -22,6 +25,8 @@ func main() {
 			)
 		}
 	}()
+
+	//fmt.Println(scanner.ParsePorts("22,80,100-103"))
 
 	for port := 1; port <= 1000; port++ {
 		pool.Wg.Add(1)
